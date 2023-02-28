@@ -27,7 +27,8 @@ import java.util.Date;
 @Service
 public class JokeService {
 
-    private String jokeApiKey = "2e7xxxxxxxxxxxxxxxxxxxxxxc48";
+//    private String jokeApiKey = "2e7xxxxxxxxxxxxxxxxxxxxxxc48";
+    private String jokeApiKey = "a1ba98d3190a4114f4e31b4cc3481823";
 
     @Autowired
     JokeDao jokeDao;
@@ -42,7 +43,7 @@ public class JokeService {
         String time = dateFormat.format(date);
         //调用的api的接口地址
         String apiPath = "https://way.jd.com/showapi/wbxh?time=" + time +
-                "&page=1&maxResult=20&showapi_sign=bd0592992b4dxxxxxxxxxxxxx4db9f3&appkey=" + jokeApiKey;
+                "&page=1&maxResult=20&showapi_sign=bd0592992b4d4050bfc927fe7a4db9f3&appkey=" + jokeApiKey;
         BufferedReader in = null;
         StringBuffer result = null;
         try {
