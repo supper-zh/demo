@@ -26,10 +26,7 @@ import java.util.Date;
  */
 @Service
 public class JokeService {
-
-//    private String jokeApiKey = "2e7xxxxxxxxxxxxxxxxxxxxxxc48";
     private String jokeApiKey = "a1ba98d3190a4114f4e31b4cc3481823";
-
     @Autowired
     JokeDao jokeDao;
 
@@ -63,9 +60,16 @@ public class JokeService {
             String result2 =  result.toString(); //返回json字符串
             //获取数据
             JSONObject jsonObject = JSON.parseObject(result2);
-//            String code = jsonObject.getString("code");
-//            System.out.println(apiPath);
-//            System.out.println(code);
+
+//            测试
+            String code = jsonObject.getString("code");
+            String code1 = jsonObject.toString();
+//            String code2 = jsonObject.toJSONString();
+            System.out.println(code1);
+//            System.out.println(code2);
+            System.out.println(apiPath); //展示完整请求路径
+            System.out.println(code);
+//
             JSONObject resultJsonObject = jsonObject.getJSONObject("result");
             JSONObject bodyJsonObject = resultJsonObject.getJSONObject("showapi_res_body");
             JSONArray jsonArray = bodyJsonObject.getJSONArray("contentlist");
@@ -95,7 +99,6 @@ public class JokeService {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
     }
 }
